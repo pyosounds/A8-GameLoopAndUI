@@ -1,0 +1,24 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/DataTables/ItemSpawnTble.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_BigCoinItem.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_SmallCoinItem.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_HealingItem.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_MineItem.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/UI/WBP_HP.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_SpartaCharacter.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/UI/WBP_MainMenu.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Maps/MenuLevel.umap",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_SlowingItem.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_BlindItem.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/UI/WBP_Blind.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/UI/WBP_HUD.uasset"
+			]
+		}
+	]
+}
