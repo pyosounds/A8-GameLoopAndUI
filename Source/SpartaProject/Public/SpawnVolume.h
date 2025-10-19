@@ -27,5 +27,5 @@ public:
 
 	FItemSpawnRow* GetRandomItem() const;
 	AActor* SpawnItem(TSubclassOf<AActor> ItemClass);
-	FVector GetRandomPointInVolume() const;
+	FVector GetRandomPointInVolume() const;	
 };

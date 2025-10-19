@@ -167,7 +167,29 @@ void ASpartaGameState::StartWave()
 			}
 		}
 	}
-		
+	
+	if (APlayerController* PlayerController = GetWorld()->GetFirstPlayerController())
+	{
+		if (ASpartaPlayerController* SpartaPlayerController = Cast<ASpartaPlayerController>(PlayerController))
+		{
+			if (UUserWidget* HUDWidget = SpartaPlayerController->GetHUDWidget())
+			{
+				UFunction* PlayAnimFunc = HUDWidget->FindFunction(FName("PlayShowWaveNotifyAnim"));
+
+				if (PlayAnimFunc)
+				{
+					HUDWidget->ProcessEvent(PlayAnimFunc, nullptr);
+				}
+
+				if (UTextBlock* WaveNotifyText = Cast<UTextBlock>(HUDWidget->GetWidgetFromName("WaveNotifyText")))
+				{
+					WaveNotifyText->SetText(FText::FromString(
+						FString::Printf(TEXT("Wave %d Start!"), CurrentWave)));
+				}
+			}
+		}
+	}
+
 	GetWorldTimerManager().SetTimer(
 		WaveTimerHandle,
 		this,

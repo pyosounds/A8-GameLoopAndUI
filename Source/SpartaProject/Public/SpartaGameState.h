@@ -49,5 +49,5 @@ public:
 	void OnWaveTimeUp();	
 	void OnCoinCollected();
 	void EndWave();
-	void UpdateHUD();
+	void UpdateHUD();	
 };

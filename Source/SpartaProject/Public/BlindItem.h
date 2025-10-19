@@ -14,7 +14,7 @@ public:
 
 	virtual void ActivateItem(AActor* Activator) override;
 
-protected:		
+protected:
 	UFUNCTION()
 	void RemoveBlindEffect();
 
