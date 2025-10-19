@@ -235,7 +235,7 @@ void ASpartaCharacter::UpdateOverheadHP()
 	if (!OverheadWidget) return;
 
 	UUserWidget* OverheadWidgetInstance = OverheadWidget->GetUserWidgetObject();
-	if (!OverheadWidget) return;
+	if (!OverheadWidgetInstance) return;
 
 	if (UProgressBar* HPBar = Cast<UProgressBar>(OverheadWidgetInstance->GetWidgetFromName(TEXT("Healthbar"))))
 	{		
