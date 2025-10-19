@@ -10,9 +10,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSpartaGameState() {}
 
 // Begin Cross Module References
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AGameState();
 SPARTAPROJECT_API UClass* Z_Construct_UClass_ASpartaGameState();
 SPARTAPROJECT_API UClass* Z_Construct_UClass_ASpartaGameState_NoRegister();
+SPARTAPROJECT_API UClass* Z_Construct_UClass_ATrapItem_NoRegister();
 UPackage* Z_Construct_UPackage__Script_SpartaProject();
 // End Cross Module References
 
@@ -188,6 +190,10 @@ struct Z_Construct_UClass_ASpartaGameState_Statics
 		{ "Category", "Wave" },
 		{ "ModuleRelativePath", "Public/SpartaGameState.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TrapItemClass_MetaData[] = {
+		{ "Category", "Wave" },
+		{ "ModuleRelativePath", "Public/SpartaGameState.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Score;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_SpawnedCoinCount;
@@ -198,6 +204,7 @@ struct Z_Construct_UClass_ASpartaGameState_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_WaveDuration;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_ItemsToSpawnPerWave_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ItemsToSpawnPerWave;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_TrapItemClass;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -220,6 +227,7 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASpartaGameState_
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASpartaGameState_Statics::NewProp_WaveDuration = { "WaveDuration", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpartaGameState, WaveDuration), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WaveDuration_MetaData), NewProp_WaveDuration_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASpartaGameState_Statics::NewProp_ItemsToSpawnPerWave_Inner = { "ItemsToSpawnPerWave", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ASpartaGameState_Statics::NewProp_ItemsToSpawnPerWave = { "ItemsToSpawnPerWave", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpartaGameState, ItemsToSpawnPerWave), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemsToSpawnPerWave_MetaData), NewProp_ItemsToSpawnPerWave_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASpartaGameState_Statics::NewProp_TrapItemClass = { "TrapItemClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASpartaGameState, TrapItemClass), Z_Construct_UClass_UClass, Z_Construct_UClass_ATrapItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrapItemClass_MetaData), NewProp_TrapItemClass_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASpartaGameState_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaGameState_Statics::NewProp_Score,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaGameState_Statics::NewProp_SpawnedCoinCount,
@@ -230,6 +238,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASpartaGa
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaGameState_Statics::NewProp_WaveDuration,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaGameState_Statics::NewProp_ItemsToSpawnPerWave_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaGameState_Statics::NewProp_ItemsToSpawnPerWave,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASpartaGameState_Statics::NewProp_TrapItemClass,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASpartaGameState_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASpartaGameState_Statics::DependentSingletons[])() = {
@@ -272,10 +281,10 @@ ASpartaGameState::~ASpartaGameState() {}
 struct Z_CompiledInDeferFile_FID_Users_PsPC_Documents_Unreal_SpartaProject_Source_SpartaProject_Public_SpartaGameState_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASpartaGameState, ASpartaGameState::StaticClass, TEXT("ASpartaGameState"), &Z_Registration_Info_UClass_ASpartaGameState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpartaGameState), 153608447U) },
+		{ Z_Construct_UClass_ASpartaGameState, ASpartaGameState::StaticClass, TEXT("ASpartaGameState"), &Z_Registration_Info_UClass_ASpartaGameState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASpartaGameState), 2495404069U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PsPC_Documents_Unreal_SpartaProject_Source_SpartaProject_Public_SpartaGameState_h_1369645418(TEXT("/Script/SpartaProject"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_PsPC_Documents_Unreal_SpartaProject_Source_SpartaProject_Public_SpartaGameState_h_3890592916(TEXT("/Script/SpartaProject"),
 	Z_CompiledInDeferFile_FID_Users_PsPC_Documents_Unreal_SpartaProject_Source_SpartaProject_Public_SpartaGameState_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_PsPC_Documents_Unreal_SpartaProject_Source_SpartaProject_Public_SpartaGameState_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

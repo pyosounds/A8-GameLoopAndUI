@@ -17,7 +17,9 @@
 				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_SlowingItem.uasset",
 				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_BlindItem.uasset",
 				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/UI/WBP_Blind.uasset",
-				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/UI/WBP_HUD.uasset"
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/UI/WBP_HUD.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_TrapItem.uasset",
+				"C:/Users/PsPC/Documents/Unreal/SpartaProject/Content/Blueprints/BP_SpartaGameState.uasset"
 			]
 		}
 	]

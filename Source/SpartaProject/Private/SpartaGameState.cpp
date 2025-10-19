@@ -4,6 +4,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "SpawnVolume.h"
 #include "CoinItem.h"
+#include "TrapItem.h"
 #include "Components/TextBlock.h"
 #include "Blueprint/UserWidget.h"
 
@@ -197,6 +198,73 @@ void ASpartaGameState::StartWave()
 		WaveDuration,
 		false
 	);
+
+	if (CurrentWave == 2)
+	{
+		EnableWave2();
+	}
+	else if (CurrentWave == 3)
+	{
+		EnableWave3();
+	}
+}
+
+void ASpartaGameState::EnableWave2()
+{
+	const FString Msg = TEXT("Wave 2: Spawning Traps!");
+	UE_LOG(LogTemp, Warning, TEXT("%s"), *Msg);
+
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, Msg);
+	}
+		
+	TArray<AActor*> FoundVolumes;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASpawnVolume::StaticClass(), FoundVolumes);
+
+	if (FoundVolumes.Num() > 0)
+	{		
+		ASpawnVolume* SpawnVolume = Cast<ASpawnVolume>(FoundVolumes[0]);
+		if (SpawnVolume)
+		{
+			for (int32 i = 0; i < 5; ++i)
+			{
+				if (SpawnVolume->SpawnItem(TrapItemClass))
+				{
+					UE_LOG(LogTemp, Warning, TEXT("TrapItem spawned successfully."));
+				}
+			}
+		}
+	}
+}
+
+void ASpartaGameState::EnableWave3()
+{
+	const FString Msg = TEXT("Wave 3: Spawning More Traps!");
+	UE_LOG(LogTemp, Warning, TEXT("%s"), *Msg);
+
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 3.f, FColor::Red, Msg);
+	}
+
+	TArray<AActor*> FoundVolumes;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASpawnVolume::StaticClass(), FoundVolumes);
+
+	if (FoundVolumes.Num() > 0)
+	{
+		ASpawnVolume* SpawnVolume = Cast<ASpawnVolume>(FoundVolumes[0]);
+		if (SpawnVolume)
+		{
+			for (int32 i = 0; i < 10; ++i)
+			{
+				if (SpawnVolume->SpawnItem(TrapItemClass))
+				{
+					UE_LOG(LogTemp, Warning, TEXT("TrapItem spawned successfully."));
+				}
+			}
+		}
+	}
 }
 
 void ASpartaGameState::OnWaveTimeUp()

@@ -4,6 +4,8 @@
 #include "GameFramework/GameState.h"
 #include "SpartaGameState.generated.h"
 
+class ATrapItem;
+
 UCLASS()
 class SPARTAPROJECT_API ASpartaGameState : public AGameState
 {
@@ -21,8 +23,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Coin")
 	int32 CollectedCoinCount;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Level")
-	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Level")	
 	int32 CurrentLevelIndex;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Wave")
@@ -35,6 +36,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Wave")
 	TArray<int32> ItemsToSpawnPerWave;
 		
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Wave")
+	TSubclassOf<ATrapItem> TrapItemClass;
+
 	FTimerHandle HUDUpdateTimerHandle;
 	FTimerHandle WaveTimerHandle;
 
@@ -49,5 +53,7 @@ public:
 	void OnWaveTimeUp();	
 	void OnCoinCollected();
 	void EndWave();
-	void UpdateHUD();	
+	void UpdateHUD();
+	void EnableWave2();
+	void EnableWave3();
 };
